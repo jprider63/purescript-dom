@@ -7,6 +7,5 @@ import Control.Monad.Eff (Eff())
 import DOM (DOM())
 import DOM.HTML.Types (HTMLTimeElement())
 
--- interface HTMLTimeElement : HTMLElement {
---            attribute DOMString dateTime;
--- };
+foreign import dateTime :: forall eff. HTMLTimeElement -> Eff (dom :: DOM | eff) String
+foreign import setDateTime :: forall eff. String -> HTMLTimeElement -> Eff (dom :: DOM | eff) Unit

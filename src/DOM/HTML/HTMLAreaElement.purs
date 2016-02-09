@@ -7,16 +7,28 @@ import Control.Monad.Eff (Eff())
 import DOM (DOM())
 import DOM.HTML.Types (HTMLAreaElement())
 
--- interface HTMLAreaElement : HTMLElement {
---            attribute DOMString alt;
---            attribute DOMString coords;
---            attribute DOMString shape;
---            attribute DOMString target;
---            attribute DOMString download;
+foreign import alt :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setAlt :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
 
---            attribute DOMString rel;
+foreign import coords :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setCoords :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
+foreign import shape :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setShape :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
+foreign import target :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setTarget :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
+foreign import download :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setDownload :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
+foreign import rel :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setRel :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
 --   readonly attribute DOMTokenList relList;
---            attribute DOMString hreflang;
---            attribute DOMString type;
--- };
--- HTMLAreaElement implements URLUtils;
+
+foreign import hreflang :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setHreflang :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
+
+foreign import type_ :: forall eff. HTMLAreaElement -> Eff (dom :: DOM | eff) String
+foreign import setType :: forall eff. String -> HTMLAreaElement -> Eff (dom :: DOM | eff) Unit
